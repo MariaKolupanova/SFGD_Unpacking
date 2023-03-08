@@ -1,0 +1,9 @@
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/CMakeFiles/BabyMINDUnpack.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/CMakeFiles/rebuild_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/CMakeFiles/edit_cache.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/CMakeFiles/pid_vs_tof.dir
+/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/CMakeFiles/dump.dir

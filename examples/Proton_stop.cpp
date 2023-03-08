@@ -1,0 +1,655 @@
+#include <stdio.h>
+#include <string.h>
+#include <exception>
+#include <fstream>
+#include <vector>
+#include <set>
+#include <map>
+#include "TFile.h"
+#include "TDirectory.h"
+#include "TH1D.h"
+#include "TSystem.h"
+#include "TMacro.h"
+#include <TTree.h>
+#include <iostream>
+#include <sstream>
+#include "TH2.h"
+#include "TH3.h"
+#include "TF1.h"
+#include "TCanvas.h"
+#include <iterator>
+#include <algorithm>
+#include "TImage.h"
+#include "TStyle.h"
+#include "TGraph.h"
+#include "TGraphErrors.h"
+
+struct Coordinate{
+    int x;
+    int y;
+    int z;
+};
+
+using namespace std;
+
+
+string GetLocation(string str)
+{
+     
+    int i = str.rfind("_Slot_");
+    string way = str.substr(0,i);  
+    return way;
+}
+
+struct vectorsTree
+{
+  vector<double> *FEBSN;
+  vector<double> *SpillTag;
+  vector<double> *GTrigTag;
+  vector<double> *GTrigTime;
+  vector<double> *hitsChannel;
+  vector<double> *hitAmpl;
+  vector<double> *hitAmplRec;
+  vector<double> *hitLGAmpl;
+  vector<double> *hitLGAmplRec;
+  vector<double> *hitHG_pe;
+  vector<double> *hitLG_pe;
+  vector<double> *hitToT_pe;
+  vector<double> *hitCharge_pe;
+  vector<double> *hitLeadTime;
+  vector<double> *hitTrailTime;
+  vector<double> *hitTimeDif;
+  vector<double> *hitTimefromSpill;
+  
+};
+
+// struct OneCubeLY{
+//     double LY;
+//     int x;
+//     int y;
+//     int z;
+// };
+
+// class CubeLY{
+// public:
+//     double GetMaxLY(){
+//         return allLightYeld.back().key;
+//     }
+// private:
+//     map<double, OneCubeLY> allLightYeld;
+// }
+
+
+int main ()
+{
+    int febTrigger = 12;
+    int FEBs[19] = {0,1,2,3,4,8,9,10,11,12,16,17,18,19,20,24,25,26,27};
+    // if (febTrigger == 28) 
+    //  int FEBs[19] = {0,1,2,3,4,8,9,10,11,16,17,18,19,20,24,25,26,27,28};
+    int NumberOfEB = 30;
+    
+    vector<string> vFileNames;
+    string sFileName;
+    ifstream fList("febs_files_list.list");
+    while (!fList.eof()) {
+        fList >> sFileName;
+        vFileNames.push_back(sFileName);
+    }
+    fList.close();
+
+    ofstream foutput("outputOfProtonLY.txt");
+    
+    string rootFileInput=GetLocation(vFileNames[0].c_str());
+    string rootFileOutput=GetLocation (vFileNames[0].c_str());
+    rootFileInput+="_all_reconstructed.root";
+    //rootFileInput+="_all.root";
+    rootFileOutput+="_event_display.root";
+    cout << rootFileInput<<endl;
+    
+    TFile *FileInput = new TFile(rootFileInput.c_str());
+    
+    vectorsTree FEB[NumberOfEB];
+    
+    for (Int_t i=0;i<NumberOfEB;i++){
+        FEB[i].FEBSN=0;
+        FEB[i].SpillTag=0;
+        FEB[i].hitsChannel=0;
+        FEB[i].hitAmpl=0;
+        FEB[i].hitAmplRec=0;
+        FEB[i].hitLeadTime=0;
+        FEB[i].GTrigTag=0;
+        FEB[i].GTrigTime=0;
+        FEB[i].hitLGAmpl=0;
+        FEB[i].hitLGAmplRec=0;
+        FEB[i].hitTrailTime=0;
+        FEB[i].hitTimeDif=0;
+        FEB[i].hitTimefromSpill=0;
+        
+        FEB[i].hitHG_pe=0;
+        FEB[i].hitLG_pe=0;
+        FEB[i].hitToT_pe=0;
+        FEB[i].hitCharge_pe=0;
+        
+    }
+    
+    
+    TTree *FEBtree[NumberOfEB];
+    Long64_t nentries[NumberOfEB];
+    std::fill(nentries, nentries + NumberOfEB, 0);
+    
+    ostringstream sFEBnum;
+    string sFEB;
+    
+    vector<int> FEBnumbers;
+    FEBnumbers.clear();
+    
+    
+    for (Int_t ih=0; ih<NumberOfEB; ih++) {
+        sFEBnum.str("");
+        sFEBnum << ih;
+        sFEB = "FEB_"+sFEBnum.str();
+        FEBtree[ih] = (TTree*)FileInput->Get(sFEB.c_str());
+        if ((TTree*)FileInput->Get(sFEB.c_str())){
+            //std::cout<<sFEB<<" ";
+            FEBtree[ih]->SetBranchAddress((sFEB+"_SN").c_str(),&FEB[ih].FEBSN);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_SpillTag").c_str(),&FEB[ih].SpillTag);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_GTrigTag").c_str(),&FEB[ih].GTrigTag);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_GTrigTime").c_str(),&FEB[ih].GTrigTime);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitsChannel").c_str(),&FEB[ih].hitsChannel);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitAmpl").c_str(),&FEB[ih].hitAmpl);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitLGAmpl").c_str(),&FEB[ih].hitLGAmpl);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitLeadTime").c_str(),&FEB[ih].hitLeadTime);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitTrailTime").c_str(),&FEB[ih].hitTrailTime);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitTimeDif").c_str(),&FEB[ih].hitTimeDif);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitTimefromSpill").c_str(),&FEB[ih].hitTimefromSpill);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitAmplRecon").c_str(), &FEB[ih].hitAmplRec);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitLGAmplRecon").c_str(), &FEB[ih].hitLGAmplRec);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitHG_pe").c_str(), &FEB[ih].hitHG_pe);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitLG_pe").c_str(), &FEB[ih].hitLG_pe);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitToT_pe").c_str(), &FEB[ih].hitToT_pe);
+            FEBtree[ih]->SetBranchAddress((sFEB+"_hitCharge_pe").c_str(), &FEB[ih].hitCharge_pe);
+            
+            nentries[ih] = FEBtree[ih]->GetEntries();
+            FEBtree[ih]->GetEntry(0);
+            //std::cout << "Number of events = " <<FEB[ih].FEBSN->size()<<std::endl;
+        }
+  }
+  
+    int minEn = (int)nentries[0];
+    for(int i = 0; i < NumberOfEB; i++){
+        if(nentries[i] < minEn && nentries[i]>0){
+            minEn = (int)nentries[i];
+        }
+    }
+    cout << "Number of spills " << minEn << endl;
+
+  TFile wfile(rootFileOutput.c_str(), "recreate");
+  cout<<rootFileOutput<<endl;
+  
+  int MapCon[28][2][96];
+  for (int iFEB = 0; iFEB<19; iFEB++) {
+       if (FEBs[iFEB] != febTrigger){
+        sFEBnum.str("");
+        sFEBnum << FEBs[iFEB];
+        sFEB = "../mapping/" + sFEBnum.str() + ".txt";
+        ifstream fmap(sFEB.c_str());
+        //cout <<endl<< "FEB "<< FEBs[iFEB]<< " mapping"<<endl;
+        int temp=0;
+        while (!fmap.eof()) {
+            fmap >> temp >> MapCon[FEBs[iFEB]][0][temp] >>MapCon[FEBs[iFEB]][1][temp];
+            //cout<<temp<<" "<<MapCon[FEBs[iFEB]][0][temp]<<" "<<MapCon[FEBs[iFEB]][1][temp]<<endl;
+            temp++;
+        }
+        fmap.close();
+       }
+  }
+  
+
+  TH2F *EventsMap_XY = new TH2F("All_events_map_XY","All_events_map_XY",  24,(int)0,(int)24, 8,(int)0,(int)8);
+  TH2F *EventsMap_YZ = new TH2F("All_events_map_YZ","All_events_map_YZ",  48,(int)0,(int)48, 8,(int)0,(int)8);
+  TH2F *EventsMap_XZ = new TH2F("All_events_map_XZ","All_events_map_XZ",  24,(int)0,(int)24, 48,(int)0,(int)48);
+
+  TH2F *EventsMap_EnergyDeposit = new TH2F("EnergyDeposit_2D","EnergyDeposit_2D",  48,(int)0,(int)48, 100,(int)0,(int)1800);
+
+  TH1F *ProtonStopLY = new TH1F("ProtonStopLY","ProtonStopLY",  500,(int)300,(int)1800);
+  TH1F *Events_StopingPoint = new TH1F("StopingPoint","StopingPoint",  48,(int)0,(int)48);
+
+  TDirectory *events2D = wfile.mkdir("events2D");
+  int NumberEvDis = 5000;
+
+  TDirectory *events2D_LY = wfile.mkdir("events2DL_Y");
+  TDirectory *events2D_LY_Iterator = wfile.mkdir("events2DL_Iterator");
+  
+  ostringstream sEventnum;
+  string sEvent;
+
+  TH1F *events2D_LY_XZ_YZ[48];
+  for (Int_t ih=0; ih < 48;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_XZ&YZ_LY"+sEventnum.str();
+    events2D_LY_XZ_YZ[ih] = new TH1F(sEvent.c_str(),sEvent.c_str(), 70,(int)0,(int)1000);
+  }
+
+  TH1F *events2D_Iterator[48];
+  for (Int_t ih=0; ih < 48;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_Iterator"+sEventnum.str();
+    events2D_Iterator[ih] = new TH1F(sEvent.c_str(),sEvent.c_str(), 70,(int)0,(int)1500);
+  }
+
+
+  TH2F *event_XY[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_XY"+sEventnum.str();
+    event_XY[ih] = new TH2F(sEvent.c_str(),sEvent.c_str(), 24,(int)0,(int)24, 8,(int)0,(int)8);
+  }
+  
+  TH2F *event_YZ[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_YZ"+sEventnum.str();
+    event_YZ[ih] = new TH2F(sEvent.c_str(),sEvent.c_str(), 48,(int)0,(int)48, 8,(int)0,(int)8);
+  }
+  
+  TH2F *event_XZ[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_XZ"+sEventnum.str();
+    event_XZ[ih] = new TH2F(sEvent.c_str(),sEvent.c_str(), 24,(int)0,(int)24, 48,(int)0,(int)48);
+  }
+
+  TH2F *eventTime_Z[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "eventTime_Z"+sEventnum.str();
+    eventTime_Z[ih] = new TH2F(sEvent.c_str(),sEvent.c_str(), 48,(int)0,(int)48, 4000,(int)0,(int)4000);
+  }
+  
+  TH2F *eventTime_X[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "eventTime_X"+sEventnum.str();
+    eventTime_X[ih] = new TH2F(sEvent.c_str(),sEvent.c_str(), 24,(int)0,(int)24, 4000,(int)0,(int)4000);
+  }
+  
+  TH1F *event_LY[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_LY"+sEventnum.str();
+    event_LY[ih] = new TH1F(sEvent.c_str(),sEvent.c_str(),48,(int)0,(int)48);
+  }
+
+  TH1F *event_Time[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "event_Time"+sEventnum.str();
+    event_Time[ih] = new TH1F(sEvent.c_str(),sEvent.c_str(),4000,(int)0,(int)4000);
+  }
+
+  TH1F *trigger_Time[NumberEvDis];
+  for (Int_t ih=0; ih < NumberEvDis;ih++){
+    sEventnum.str("");
+    sEventnum << ih;
+    sEvent = "trigger_Time"+sEventnum.str();
+    trigger_Time[ih] = new TH1F(sEvent.c_str(),sEvent.c_str(),4000,(int)0,(int)4000);
+  }
+
+  Double_t energyDep[48];
+  Double_t energyDepXZ[48];
+  Double_t energyDepYZ[48];
+
+  Double_t energyDepAtY[8];
+  Double_t energyDepAtX[24];
+
+  Double_t energyDepAtY_Zero[8];
+  Double_t energyDepAtX_Zero[24];
+
+  Int_t eventNum=0;
+  
+  bool LargehitTimeDif = 0;
+
+  TCanvas *c1 = new TCanvas("c1","c1", 1480, 1160);
+  bool SpillMised = false;
+  for (Int_t subSpill = 0; subSpill<minEn; subSpill++) {
+  //for (Int_t subSpill = 0; subSpill<155; subSpill++) {
+        Int_t SpillNumber = subSpill;
+        
+        cout << "Getting Spill Number " << SpillNumber + 1 << endl;
+        for (int ik = 0; ik < 19; ik++){
+            FEBtree[FEBs[ik]]->GetEntry(SpillNumber);
+            if (FEB[FEBs[ik]].SpillTag->back() != SpillNumber + 1){
+                break;
+            }
+            if (FEB[FEBs[ik]].SpillTag->size() < 2 ){
+                cout << "NULL"<<endl;
+                SpillMised = true;
+                break;
+            } else {
+                SpillMised = false;
+            }
+            //cout << "FEB_"<< FEBs[ik]<< " "<< FEB[FEBs[ik]].hitCharge_pe->size()<<endl;
+        }
+        if (!SpillMised){
+            
+            for ( int TOFtrigger = 0; TOFtrigger < FEB[febTrigger].FEBSN->size(); TOFtrigger++){
+            if (FEB[febTrigger].hitTimeDif->at(TOFtrigger) > 0 && NumberEvDis > eventNum  /*&& FEB[febTrigger].hitsChannel->at(TOFtrigger) == 1*/){
+
+                bool triggerDisplay = false;
+                LargehitTimeDif = 0;
+                Double_t CrossTalk = 0;
+                Int_t GTindex[2] = {0,0};
+                for (int ik = 0; ik < 48; ik++ ){
+                    energyDep[ik] = 0;
+                    energyDepXZ[ik] = 0;
+                    energyDepYZ[ik] = 0;
+                }
+                for (int i = 0; i < 19; i++){
+                    if (FEBs[i]!=febTrigger){
+                        
+                        auto bounds=std::equal_range (FEB[FEBs[i]].GTrigTag->begin(), FEB[FEBs[i]].GTrigTag->end(), FEB[febTrigger].GTrigTag->at(TOFtrigger));
+                        GTindex[0] = bounds.first - FEB[FEBs[i]].GTrigTag->begin();
+                        GTindex[1] = bounds.second - FEB[FEBs[i]].GTrigTag->begin();
+            
+                        for (int check = GTindex[0]; check <  GTindex[1]; check++){
+                            if ( (FEB[febTrigger].hitTimefromSpill->at(TOFtrigger) - FEB[FEBs[i]].hitTimefromSpill->at(check)) > 40 &&
+                                (FEB[febTrigger].hitTimefromSpill->at(TOFtrigger) - FEB[FEBs[i]].hitTimefromSpill->at(check)) < 120){
+                                 if (FEB[FEBs[i]].hitTimeDif->at(check) > 50)
+                                     LargehitTimeDif = 1;
+                                if ( FEBs[i] == 0 || FEBs[i] == 16){
+                                    event_XY[eventNum]->Fill((int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],(int)MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],FEB[FEBs[i]].hitCharge_pe->at(check));
+                                    EventsMap_XY->Fill(MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],1);
+                                    event_Time[eventNum]->Fill((int)FEB[FEBs[i]].hitLeadTime->at(check));
+                                    if (!triggerDisplay){
+                                        trigger_Time[eventNum]->Fill(FEB[febTrigger].hitLeadTime->at(TOFtrigger));
+                                        triggerDisplay = true;
+                                        //cout<<"Trigger time = "<< FEB[febTrigger].hitLeadTime->at(TOFtrigger)<<endl;
+                                    }
+                                } else if ( FEBs[i] == 1 || FEBs[i] == 2 || FEBs[i] == 17 || FEBs[i] == 24){
+                                    event_YZ[eventNum]->Fill((int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],(int)MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],FEB[FEBs[i]].hitCharge_pe->at(check));
+                                    event_Time[eventNum]->Fill((int)FEB[FEBs[i]].hitLeadTime->at(check));
+                                    EventsMap_YZ->Fill(MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],1);
+                                    if (FEB[FEBs[i]].hitCharge_pe->at(check) > 0  && FEB[FEBs[i]].hitCharge_pe->at(check) < 10000) {
+                                        energyDep[MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        energyDepYZ[MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        energyDepAtY[MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        if ( MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 0){
+                                            energyDepAtY_Zero[MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        }
+                                    }
+                                    if (MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 0 || MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 7){
+                                        CrossTalk  += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                    }
+                                } else {
+                                    event_XZ[eventNum]->Fill((int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],(int)MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],FEB[FEBs[i]].hitCharge_pe->at(check));
+                                    EventsMap_XZ->Fill(MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],1);
+                                    event_Time[eventNum]->Fill((int)FEB[FEBs[i]].hitLeadTime->at(check));
+                                    eventTime_X[eventNum]->Fill((int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)],(int)FEB[FEBs[i]].hitLeadTime->at(check),1);
+                                    eventTime_Z[eventNum]->Fill(MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)],(int)FEB[FEBs[i]].hitLeadTime->at(check),1);
+                                    if (FEB[FEBs[i]].hitCharge_pe->at(check) > 0  && FEB[FEBs[i]].hitCharge_pe->at(check) < 10000){
+                                        energyDep[MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        energyDepXZ[MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        energyDepAtX[MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        if (MapCon[FEBs[i]][1][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 0) {
+                                            energyDepAtX_Zero[MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)]] += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                        }
+                                    }
+                                    if ((int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 0 || (int)MapCon[FEBs[i]][0][(int)FEB[FEBs[i]].hitsChannel->at(check)] == 23){
+                                        CrossTalk  += FEB[FEBs[i]].hitCharge_pe->at(check);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                double extraSumm = 0;
+            
+                for (int ik = 46; ik < 48; ik++ ){
+                    extraSumm += energyDep[ik];
+                }
+
+                for (int ik = 0; ik < 40; ik++ ){
+                    if (energyDepXZ[ik] > 5 && energyDepXZ[ik+2] > 5 && energyDepXZ[ik+4] > 5 && energyDepXZ[ik+6] > 5 &&
+                        energyDepXZ[ik+1] < 5 && energyDepXZ[ik+3] < 5 && energyDepXZ[ik+5] < 5 && energyDepXZ[ik+7] < 5){
+                        LargehitTimeDif = 1;
+                    }
+                    if (energyDepYZ[ik] > 5 && energyDepYZ[ik+2] > 5 && energyDepYZ[ik+4] > 5 && energyDepYZ[ik+6] > 5 &&
+                        energyDepYZ[ik+1] < 5 && energyDepYZ[ik+3] < 5 && energyDepYZ[ik+5] < 5 && energyDepYZ[ik+7] < 5){
+                        LargehitTimeDif = 1;
+                    }
+                }
+
+            if ( extraSumm < 20){
+                Coordinate maxCoord;
+                Coordinate zeroPoint;
+                if ( LargehitTimeDif == 0) {
+                    c1->Clear();
+                if (event_XZ[eventNum]->GetEntries()>5 && event_YZ[eventNum]->GetEntries()>5 && CrossTalk < 60){
+
+                    foutput<<eventNum<< " ";
+                    for (int ik = 0; ik < 48; ik++ ){
+                        event_LY[eventNum]->Fill(ik,energyDep[ik]);
+                        if (energyDep[ik]>40){
+                            events2D_LY_XZ_YZ[ik]->Fill(energyDep[ik],1);
+                            EventsMap_EnergyDeposit->Fill(ik,energyDep[ik],1);
+                        }
+                        foutput << energyDep[ik] << " "; 
+                    } 
+                    auto itZ = max_element(std::begin(energyDep), std::end(energyDep));
+                    maxCoord.z = itZ - begin(energyDep);
+                    Events_StopingPoint-> Fill(maxCoord.z);
+
+                    auto itX = max_element(std::begin(energyDepAtX), std::end(energyDepAtX));
+                    maxCoord.x = itX - begin(energyDepAtX);
+
+                    auto itY = max_element(std::begin(energyDepAtY), std::end(energyDepAtY));
+                    maxCoord.y = itY - begin(energyDepAtY);
+
+
+                    ProtonStopLY-> Fill(*itZ); 
+
+                    for (auto itf = itZ; itf >= begin(energyDep); itf-- ){
+                        if (*itf > 5){
+                            events2D_Iterator[47 - (itZ - itf)]->Fill(*itf);
+                        }
+                    }
+
+                    foutput << endl;
+        
+                    c1->Divide(3,2);
+        
+                    c1 -> cd(1);
+                    event_XY[eventNum]-> GetYaxis()->SetTitle("Y [cm]");
+                    event_XY[eventNum]-> GetXaxis()->SetTitle("X [cm]");
+                    event_XY[eventNum]-> Draw("colorz");
+        
+                    c1 -> cd(2);
+                    event_YZ[eventNum]-> GetYaxis()->SetTitle("Y [cm]");
+                    event_YZ[eventNum]-> GetXaxis()->SetTitle("Z [cm]");
+                    event_YZ[eventNum]-> Draw("colorz");
+        
+                    c1 -> cd(3);
+                    event_XZ[eventNum]-> GetYaxis()->SetTitle("Z [cm]");
+                    event_XZ[eventNum]-> GetXaxis()->SetTitle("X [cm]");
+                    event_XZ[eventNum]->Draw("colorz");
+        
+                    c1 -> cd(4);
+                    event_LY[eventNum]-> GetYaxis()->SetTitle("LY [p.e.]");
+                    event_LY[eventNum]-> GetXaxis()->SetTitle("Z [cm]");
+                    event_LY[eventNum]->Draw("HIST");
+        
+                    c1 -> cd(5);
+                    event_Time[eventNum]-> GetYaxis()->SetTitle("N");
+                    event_Time[eventNum]-> GetXaxis()->SetTitle("T [10 ns]");
+                    event_Time[eventNum]->Draw();
+                    trigger_Time[eventNum]->SetLineColor(kRed);
+                    trigger_Time[eventNum]->Draw("SAME");
+
+
+                    c1 -> cd(6);
+                    trigger_Time[eventNum]->Draw("SAME");
+
+                    c1->Update();
+                    events2D -> cd();
+                    c1->Write();
+                }
+            }
+        }
+       
+            delete event_Time[eventNum];
+            delete event_XY[eventNum];
+            delete event_YZ[eventNum];
+            delete event_XZ[eventNum];
+            delete event_LY[eventNum];
+        
+            eventNum++;
+        }
+    }
+ 
+    for (Int_t i=0;i<NumberOfEB;i++){
+        FEB[i].FEBSN=0;
+        FEB[i].SpillTag=0;
+        FEB[i].hitsChannel=0;
+        FEB[i].hitAmpl=0;
+        FEB[i].hitAmplRec=0;
+        FEB[i].hitLeadTime=0;
+        FEB[i].GTrigTag=0;
+        FEB[i].GTrigTime=0;
+        FEB[i].hitLGAmpl=0;
+        FEB[i].hitLGAmplRec=0;
+        FEB[i].hitTrailTime=0;
+        FEB[i].hitTimeDif=0;
+        FEB[i].hitTimefromSpill=0;
+        
+        FEB[i].hitHG_pe=0;
+        FEB[i].hitLG_pe=0;
+        FEB[i].hitToT_pe=0;
+        FEB[i].hitCharge_pe=0;
+        
+    }
+ }    
+  }
+  wfile.cd();
+
+  EventsMap_EnergyDeposit->GetYaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+  EventsMap_EnergyDeposit->GetXaxis()->SetTitle("Z [cm]");
+  EventsMap_EnergyDeposit->Write();
+
+
+  ProtonStopLY-> GetYaxis()->SetTitle("N");
+  ProtonStopLY-> GetXaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+  ProtonStopLY-> Write();
+  EventsMap_XY->Write();
+  EventsMap_YZ->Write();
+  EventsMap_XZ->Write();
+
+
+  double LYpeaks[48];
+  double LYerrorsY[48];
+  double LYerrorsX[48];
+  double LYki[48];
+  Double_t vpar[3];
+
+  double LYpeaksItZ[48];
+  double LYerrorsYItZ[48];
+  double LYerrorsXItZ[48];
+  double LYkiItZ[48];
+  Double_t vparItZ[3];
+
+
+  TF1 *fit;
+  for (int ik = 0; ik < 48; ik++){
+    if (ik >= 0 && ik <=10){
+        fit = new TF1("fit","gaus",100,300);
+    } else if (ik <=24 ){
+        fit = new TF1("fit","gaus",200,400);
+    } else if (ik<= 35){
+        fit = new TF1("fit","gaus",200,500);
+    } else if (ik<=43 ) {
+        fit = new TF1("fit","gaus",200,1000);
+    }
+
+    events2D_LY_XZ_YZ[ik]->Fit("fit","MQER+");
+    fit->GetParameters(&vpar[0]);
+    LYpeaks[ik] = vpar[1];
+    LYerrorsY[ik] = fit->GetParError(1);
+    //cout << LYerrorsY[ik] << " " ;
+    LYerrorsX[ik] = 0;
+    LYki[ik] = ik;
+
+    events2D_LY -> cd(); //here
+    events2D_LY_XZ_YZ[ik]-> GetYaxis()->SetTitle("N");
+    events2D_LY_XZ_YZ[ik]-> GetXaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+    events2D_LY_XZ_YZ[ik]->Draw();
+    events2D_LY_XZ_YZ[ik]->Write();
+
+
+    if (ik >= 0 && ik <=30){
+        fit = new TF1("fit","gaus",100,400);
+    } else if (ik <=40 ){
+        fit = new TF1("fit","gaus",100,500);
+    } else {
+        fit = new TF1("fit","gaus",100,1200);
+    }
+
+    events2D_LY_Iterator->cd();
+    events2D_Iterator[ik]->Fit("fit","MQER+");
+    fit->GetParameters(&vparItZ[0]);
+    LYpeaksItZ[ik] = vparItZ[1];
+    LYerrorsYItZ[ik] = fit->GetParError(1);
+    LYerrorsXItZ[ik] = 0;
+    LYkiItZ[ik] = ik;
+
+    events2D_Iterator[ik]-> GetYaxis()->SetTitle("N");
+    events2D_Iterator[ik]-> GetXaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+    events2D_Iterator[ik]-> Draw();
+    events2D_Iterator[ik]-> Write();
+  }
+
+  TGraph graph(48);
+
+  for (int ik = 0; ik < 48; ik++){
+    cout<< LYpeaks[ik]<< " " ;
+    graph.SetPoint(ik, ik, LYpeaks[ik]);
+  }
+
+     wfile.cd();
+     graph.SetMarkerStyle(21);
+     graph.SetMarkerStyle(2);
+    
+     graph.GetYaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+     graph.GetXaxis()->SetTitle("Z [cm]");
+     graph.Draw("APL");
+     graph.Write();
+
+     auto ge = new TGraphErrors(48, LYki, LYpeaks, LYerrorsX, LYerrorsY);
+     ge->GetYaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+     ge->GetXaxis()->SetTitle("Z [cm]");
+     ge->Draw("APL");
+     ge->Write();
+
+     Events_StopingPoint->GetXaxis()->SetTitle("Z [cm]");
+     Events_StopingPoint->GetYaxis()->SetTitle("N");
+     Events_StopingPoint->Draw();
+     Events_StopingPoint->Write();
+
+     auto *Events_EnergyDepositIterator = new TGraphErrors(48,LYkiItZ, LYpeaksItZ, LYerrorsXItZ, LYerrorsYItZ);
+     Events_EnergyDepositIterator->GetYaxis()->SetTitle("LY [p.e.] (X+Y fiber)");
+     Events_EnergyDepositIterator->GetXaxis()->SetTitle("Z [cm]");
+     Events_EnergyDepositIterator->Draw("APL");
+     Events_EnergyDepositIterator->Write();
+
+
+     wfile.Close();
+     FileInput->Close();
+     return 0;
+}

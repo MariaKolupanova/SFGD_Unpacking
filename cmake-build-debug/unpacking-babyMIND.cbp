@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="unpacking-babyMIND"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;CMake Files\src\;CMake Files\examples\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BabyMINDUnpack">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/lib/libBabyMINDUnpack.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 BabyMINDUnpack"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BabyMINDUnpack/fast">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/lib/libBabyMINDUnpack.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 BabyMINDUnpack/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pid_vs_tof">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin/pid_vs_tof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 pid_vs_tof"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pid_vs_tof/fast">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin/pid_vs_tof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 pid_vs_tof/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin/dump" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 dump"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump/fast">
+				<Option output="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin/dump" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/."/>
+					<Add directory="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 dump/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/examples/babyMindDataDump.cpp">
+			<Option target="dump"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/examples/out_vs_pid.cpp">
+			<Option target="pid_vs_tof"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDargumentHandler.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDargumentHandler.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDdataFile.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDdataFile.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDdataWordBM.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDdataWordBM.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDexception.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDexception.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDfragmentBM.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDfragmentBM.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDpartEventBM.cpp">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/MDpartEventBM.h">
+			<Option target="BabyMINDUnpack"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/cmake-build-debug/FindROOT.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/amefodev/work/SuperFGD/SFGD_Unpacking/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
