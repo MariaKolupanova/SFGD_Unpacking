@@ -260,19 +260,6 @@ HG_reconstructed/fast:
 .PHONY : HG_reconstructed/fast
 
 #=============================================================================
-# Target rules for targets named RootFileAnalyssis_recon
-
-# Build rule for target.
-RootFileAnalyssis_recon: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RootFileAnalyssis_recon
-.PHONY : RootFileAnalyssis_recon
-
-# fast build rule for target.
-RootFileAnalyssis_recon/fast:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/RootFileAnalyssis_recon.dir/build.make examples/CMakeFiles/RootFileAnalyssis_recon.dir/build
-.PHONY : RootFileAnalyssis_recon/fast
-
-#=============================================================================
 # Target rules for targets named StoppingProton
 
 # Build rule for target.
@@ -284,19 +271,6 @@ StoppingProton: cmake_check_build_system
 StoppingProton/fast:
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/StoppingProton.dir/build.make examples/CMakeFiles/StoppingProton.dir/build
 .PHONY : StoppingProton/fast
-
-#=============================================================================
-# Target rules for targets named MuonStop
-
-# Build rule for target.
-MuonStop: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MuonStop
-.PHONY : MuonStop
-
-# fast build rule for target.
-MuonStop/fast:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/MuonStop.dir/build.make examples/CMakeFiles/MuonStop.dir/build
-.PHONY : MuonStop/fast
 
 #=============================================================================
 # Target rules for targets named Calibration
@@ -325,32 +299,6 @@ Amplitude_matching/fast:
 .PHONY : Amplitude_matching/fast
 
 #=============================================================================
-# Target rules for targets named AverageLY
-
-# Build rule for target.
-AverageLY: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AverageLY
-.PHONY : AverageLY
-
-# fast build rule for target.
-AverageLY/fast:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY.dir/build.make examples/CMakeFiles/AverageLY.dir/build
-.PHONY : AverageLY/fast
-
-#=============================================================================
-# Target rules for targets named AverageLY_August
-
-# Build rule for target.
-AverageLY_August: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AverageLY_August
-.PHONY : AverageLY_August
-
-# fast build rule for target.
-AverageLY_August/fast:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY_August.dir/build.make examples/CMakeFiles/AverageLY_August.dir/build
-.PHONY : AverageLY_August/fast
-
-#=============================================================================
 # Target rules for targets named ProtonStop
 
 # Build rule for target.
@@ -363,6 +311,19 @@ ProtonStop/fast:
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/build
 .PHONY : ProtonStop/fast
 
+#=============================================================================
+# Target rules for targets named TimeFromTrigger
+
+# Build rule for target.
+TimeFromTrigger: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TimeFromTrigger
+.PHONY : TimeFromTrigger
+
+# fast build rule for target.
+TimeFromTrigger/fast:
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/build
+.PHONY : TimeFromTrigger/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -372,8 +333,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Amplitude_matching"
-	@echo "... AverageLY"
-	@echo "... AverageLY_August"
 	@echo "... BabyMINDUnpack"
 	@echo "... Calibration"
 	@echo "... GTrigTagSearch"
@@ -381,11 +340,10 @@ help:
 	@echo "... HG_vs_LG_calib"
 	@echo "... HG_vs_ToT_calib"
 	@echo "... LG_vs_ToT_calib"
-	@echo "... MuonStop"
 	@echo "... ProtonStop"
-	@echo "... RootFileAnalyssis_recon"
 	@echo "... StoppingProton"
 	@echo "... TDMunpack"
+	@echo "... TimeFromTrigger"
 	@echo "... dump"
 	@echo "... pid_vs_tof"
 	@echo "... ufe-monitor"

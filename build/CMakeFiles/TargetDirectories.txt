@@ -13,13 +13,10 @@
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/HG_vs_ToT_calib.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/LG_vs_ToT_calib.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/HG_reconstructed.dir
-/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/RootFileAnalyssis_recon.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/StoppingProton.dir
-/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/MuonStop.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/Calibration.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/Amplitude_matching.dir
-/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/AverageLY.dir
-/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/AverageLY_August.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/ProtonStop.dir
+/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/TimeFromTrigger.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/edit_cache.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/rebuild_cache.dir

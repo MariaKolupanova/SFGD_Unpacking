@@ -257,20 +257,6 @@ HG_reconstructed/fast:
 .PHONY : HG_reconstructed/fast
 
 # Convenience name for target.
-examples/CMakeFiles/RootFileAnalyssis_recon.dir/rule:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/RootFileAnalyssis_recon.dir/rule
-.PHONY : examples/CMakeFiles/RootFileAnalyssis_recon.dir/rule
-
-# Convenience name for target.
-RootFileAnalyssis_recon: examples/CMakeFiles/RootFileAnalyssis_recon.dir/rule
-.PHONY : RootFileAnalyssis_recon
-
-# fast build rule for target.
-RootFileAnalyssis_recon/fast:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/RootFileAnalyssis_recon.dir/build.make examples/CMakeFiles/RootFileAnalyssis_recon.dir/build
-.PHONY : RootFileAnalyssis_recon/fast
-
-# Convenience name for target.
 examples/CMakeFiles/StoppingProton.dir/rule:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/StoppingProton.dir/rule
 .PHONY : examples/CMakeFiles/StoppingProton.dir/rule
@@ -283,20 +269,6 @@ StoppingProton: examples/CMakeFiles/StoppingProton.dir/rule
 StoppingProton/fast:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/StoppingProton.dir/build.make examples/CMakeFiles/StoppingProton.dir/build
 .PHONY : StoppingProton/fast
-
-# Convenience name for target.
-examples/CMakeFiles/MuonStop.dir/rule:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/MuonStop.dir/rule
-.PHONY : examples/CMakeFiles/MuonStop.dir/rule
-
-# Convenience name for target.
-MuonStop: examples/CMakeFiles/MuonStop.dir/rule
-.PHONY : MuonStop
-
-# fast build rule for target.
-MuonStop/fast:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/MuonStop.dir/build.make examples/CMakeFiles/MuonStop.dir/build
-.PHONY : MuonStop/fast
 
 # Convenience name for target.
 examples/CMakeFiles/Calibration.dir/rule:
@@ -327,34 +299,6 @@ Amplitude_matching/fast:
 .PHONY : Amplitude_matching/fast
 
 # Convenience name for target.
-examples/CMakeFiles/AverageLY.dir/rule:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/AverageLY.dir/rule
-.PHONY : examples/CMakeFiles/AverageLY.dir/rule
-
-# Convenience name for target.
-AverageLY: examples/CMakeFiles/AverageLY.dir/rule
-.PHONY : AverageLY
-
-# fast build rule for target.
-AverageLY/fast:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY.dir/build.make examples/CMakeFiles/AverageLY.dir/build
-.PHONY : AverageLY/fast
-
-# Convenience name for target.
-examples/CMakeFiles/AverageLY_August.dir/rule:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/AverageLY_August.dir/rule
-.PHONY : examples/CMakeFiles/AverageLY_August.dir/rule
-
-# Convenience name for target.
-AverageLY_August: examples/CMakeFiles/AverageLY_August.dir/rule
-.PHONY : AverageLY_August
-
-# fast build rule for target.
-AverageLY_August/fast:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY_August.dir/build.make examples/CMakeFiles/AverageLY_August.dir/build
-.PHONY : AverageLY_August/fast
-
-# Convenience name for target.
 examples/CMakeFiles/ProtonStop.dir/rule:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/ProtonStop.dir/rule
 .PHONY : examples/CMakeFiles/ProtonStop.dir/rule
@@ -368,53 +312,19 @@ ProtonStop/fast:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/build
 .PHONY : ProtonStop/fast
 
-AverageLY.o: AverageLY.cpp.o
-.PHONY : AverageLY.o
+# Convenience name for target.
+examples/CMakeFiles/TimeFromTrigger.dir/rule:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/TimeFromTrigger.dir/rule
+.PHONY : examples/CMakeFiles/TimeFromTrigger.dir/rule
 
-# target to build an object file
-AverageLY.cpp.o:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY.dir/build.make examples/CMakeFiles/AverageLY.dir/AverageLY.cpp.o
-.PHONY : AverageLY.cpp.o
+# Convenience name for target.
+TimeFromTrigger: examples/CMakeFiles/TimeFromTrigger.dir/rule
+.PHONY : TimeFromTrigger
 
-AverageLY.i: AverageLY.cpp.i
-.PHONY : AverageLY.i
-
-# target to preprocess a source file
-AverageLY.cpp.i:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY.dir/build.make examples/CMakeFiles/AverageLY.dir/AverageLY.cpp.i
-.PHONY : AverageLY.cpp.i
-
-AverageLY.s: AverageLY.cpp.s
-.PHONY : AverageLY.s
-
-# target to generate assembly for a file
-AverageLY.cpp.s:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY.dir/build.make examples/CMakeFiles/AverageLY.dir/AverageLY.cpp.s
-.PHONY : AverageLY.cpp.s
-
-AverageLY_August.o: AverageLY_August.cpp.o
-.PHONY : AverageLY_August.o
-
-# target to build an object file
-AverageLY_August.cpp.o:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY_August.dir/build.make examples/CMakeFiles/AverageLY_August.dir/AverageLY_August.cpp.o
-.PHONY : AverageLY_August.cpp.o
-
-AverageLY_August.i: AverageLY_August.cpp.i
-.PHONY : AverageLY_August.i
-
-# target to preprocess a source file
-AverageLY_August.cpp.i:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY_August.dir/build.make examples/CMakeFiles/AverageLY_August.dir/AverageLY_August.cpp.i
-.PHONY : AverageLY_August.cpp.i
-
-AverageLY_August.s: AverageLY_August.cpp.s
-.PHONY : AverageLY_August.s
-
-# target to generate assembly for a file
-AverageLY_August.cpp.s:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/AverageLY_August.dir/build.make examples/CMakeFiles/AverageLY_August.dir/AverageLY_August.cpp.s
-.PHONY : AverageLY_August.cpp.s
+# fast build rule for target.
+TimeFromTrigger/fast:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/build
+.PHONY : TimeFromTrigger/fast
 
 BabyMIND_ToT_Amplitude_matching.o: BabyMIND_ToT_Amplitude_matching.cpp.o
 .PHONY : BabyMIND_ToT_Amplitude_matching.o
@@ -584,30 +494,6 @@ Max_LY_XZvsYZ.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/Max_LY_XZvsYZ.cpp.s
 .PHONY : Max_LY_XZvsYZ.cpp.s
 
-Muon_stop.o: Muon_stop.cpp.o
-.PHONY : Muon_stop.o
-
-# target to build an object file
-Muon_stop.cpp.o:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/MuonStop.dir/build.make examples/CMakeFiles/MuonStop.dir/Muon_stop.cpp.o
-.PHONY : Muon_stop.cpp.o
-
-Muon_stop.i: Muon_stop.cpp.i
-.PHONY : Muon_stop.i
-
-# target to preprocess a source file
-Muon_stop.cpp.i:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/MuonStop.dir/build.make examples/CMakeFiles/MuonStop.dir/Muon_stop.cpp.i
-.PHONY : Muon_stop.cpp.i
-
-Muon_stop.s: Muon_stop.cpp.s
-.PHONY : Muon_stop.s
-
-# target to generate assembly for a file
-Muon_stop.cpp.s:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/MuonStop.dir/build.make examples/CMakeFiles/MuonStop.dir/Muon_stop.cpp.s
-.PHONY : Muon_stop.cpp.s
-
 Proton_stop.o: Proton_stop.cpp.o
 .PHONY : Proton_stop.o
 
@@ -631,6 +517,30 @@ Proton_stop.s: Proton_stop.cpp.s
 Proton_stop.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/StoppingProton.dir/build.make examples/CMakeFiles/StoppingProton.dir/Proton_stop.cpp.s
 .PHONY : Proton_stop.cpp.s
+
+Time_From_Trigger.o: Time_From_Trigger.cpp.o
+.PHONY : Time_From_Trigger.o
+
+# target to build an object file
+Time_From_Trigger.cpp.o:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/Time_From_Trigger.cpp.o
+.PHONY : Time_From_Trigger.cpp.o
+
+Time_From_Trigger.i: Time_From_Trigger.cpp.i
+.PHONY : Time_From_Trigger.i
+
+# target to preprocess a source file
+Time_From_Trigger.cpp.i:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/Time_From_Trigger.cpp.i
+.PHONY : Time_From_Trigger.cpp.i
+
+Time_From_Trigger.s: Time_From_Trigger.cpp.s
+.PHONY : Time_From_Trigger.s
+
+# target to generate assembly for a file
+Time_From_Trigger.cpp.s:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/Time_From_Trigger.cpp.s
+.PHONY : Time_From_Trigger.cpp.s
 
 babyMINDTDMUnpack.o: babyMINDTDMUnpack.cpp.o
 .PHONY : babyMINDTDMUnpack.o
@@ -752,30 +662,6 @@ out_vs_pid.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pid_vs_tof.dir/build.make examples/CMakeFiles/pid_vs_tof.dir/out_vs_pid.cpp.s
 .PHONY : out_vs_pid.cpp.s
 
-t9rootFileanalysis_recon.o: t9rootFileanalysis_recon.cpp.o
-.PHONY : t9rootFileanalysis_recon.o
-
-# target to build an object file
-t9rootFileanalysis_recon.cpp.o:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/RootFileAnalyssis_recon.dir/build.make examples/CMakeFiles/RootFileAnalyssis_recon.dir/t9rootFileanalysis_recon.cpp.o
-.PHONY : t9rootFileanalysis_recon.cpp.o
-
-t9rootFileanalysis_recon.i: t9rootFileanalysis_recon.cpp.i
-.PHONY : t9rootFileanalysis_recon.i
-
-# target to preprocess a source file
-t9rootFileanalysis_recon.cpp.i:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/RootFileAnalyssis_recon.dir/build.make examples/CMakeFiles/RootFileAnalyssis_recon.dir/t9rootFileanalysis_recon.cpp.i
-.PHONY : t9rootFileanalysis_recon.cpp.i
-
-t9rootFileanalysis_recon.s: t9rootFileanalysis_recon.cpp.s
-.PHONY : t9rootFileanalysis_recon.s
-
-# target to generate assembly for a file
-t9rootFileanalysis_recon.cpp.s:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/RootFileAnalyssis_recon.dir/build.make examples/CMakeFiles/RootFileAnalyssis_recon.dir/t9rootFileanalysis_recon.cpp.s
-.PHONY : t9rootFileanalysis_recon.cpp.s
-
 ufe_monitor.o: ufe_monitor.cpp.o
 .PHONY : ufe_monitor.o
 
@@ -809,29 +695,20 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Amplitude_matching"
-	@echo "... AverageLY"
-	@echo "... AverageLY_August"
 	@echo "... Calibration"
 	@echo "... GTrigTagSearch"
 	@echo "... HG_reconstructed"
 	@echo "... HG_vs_LG_calib"
 	@echo "... HG_vs_ToT_calib"
 	@echo "... LG_vs_ToT_calib"
-	@echo "... MuonStop"
 	@echo "... ProtonStop"
-	@echo "... RootFileAnalyssis_recon"
 	@echo "... StoppingProton"
 	@echo "... TDMunpack"
+	@echo "... TimeFromTrigger"
 	@echo "... dump"
 	@echo "... pid_vs_tof"
 	@echo "... ufe-monitor"
 	@echo "... unpack"
-	@echo "... AverageLY.o"
-	@echo "... AverageLY.i"
-	@echo "... AverageLY.s"
-	@echo "... AverageLY_August.o"
-	@echo "... AverageLY_August.i"
-	@echo "... AverageLY_August.s"
 	@echo "... BabyMIND_ToT_Amplitude_matching.o"
 	@echo "... BabyMIND_ToT_Amplitude_matching.i"
 	@echo "... BabyMIND_ToT_Amplitude_matching.s"
@@ -853,12 +730,12 @@ help:
 	@echo "... Max_LY_XZvsYZ.o"
 	@echo "... Max_LY_XZvsYZ.i"
 	@echo "... Max_LY_XZvsYZ.s"
-	@echo "... Muon_stop.o"
-	@echo "... Muon_stop.i"
-	@echo "... Muon_stop.s"
 	@echo "... Proton_stop.o"
 	@echo "... Proton_stop.i"
 	@echo "... Proton_stop.s"
+	@echo "... Time_From_Trigger.o"
+	@echo "... Time_From_Trigger.i"
+	@echo "... Time_From_Trigger.s"
 	@echo "... babyMINDTDMUnpack.o"
 	@echo "... babyMINDTDMUnpack.i"
 	@echo "... babyMINDTDMUnpack.s"
@@ -874,9 +751,6 @@ help:
 	@echo "... out_vs_pid.o"
 	@echo "... out_vs_pid.i"
 	@echo "... out_vs_pid.s"
-	@echo "... t9rootFileanalysis_recon.o"
-	@echo "... t9rootFileanalysis_recon.i"
-	@echo "... t9rootFileanalysis_recon.s"
 	@echo "... ufe_monitor.o"
 	@echo "... ufe_monitor.i"
 	@echo "... ufe_monitor.s"

@@ -30,14 +30,8 @@ if    (ROOT_FOUND)
   ADD_EXECUTABLE(HG_reconstructed                   HG_reconstructed_obso.cpp)
   TARGET_LINK_LIBRARIES(HG_reconstructed            BabyMINDUnpack ${ROOT_LIBRARIES})
   
-  ADD_EXECUTABLE(RootFileAnalyssis_recon            t9rootFileanalysis_recon.cpp)
-  TARGET_LINK_LIBRARIES(RootFileAnalyssis_recon     BabyMINDUnpack ${ROOT_LIBRARIES})
-  
   ADD_EXECUTABLE(StoppingProton                     Proton_stop.cpp)
   TARGET_LINK_LIBRARIES(StoppingProton              BabyMINDUnpack ${ROOT_LIBRARIES})
-
-  ADD_EXECUTABLE(MuonStop                           Muon_stop.cpp)
-  TARGET_LINK_LIBRARIES(MuonStop                    BabyMINDUnpack ${ROOT_LIBRARIES})
 
   ADD_EXECUTABLE(Calibration                        babyMindCalibration.cpp)
   TARGET_LINK_LIBRARIES(Calibration                 BabyMINDUnpack "${ROOT_LIBRARIES} -lSpectrum")
@@ -45,13 +39,10 @@ if    (ROOT_FOUND)
   ADD_EXECUTABLE(Amplitude_matching                 BabyMIND_ToT_Amplitude_matching.cpp)
   TARGET_LINK_LIBRARIES(Amplitude_matching          BabyMINDUnpack ${ROOT_LIBRARIES})
 
-  ADD_EXECUTABLE(AverageLY                          AverageLY.cpp)
-  TARGET_LINK_LIBRARIES(AverageLY                   BabyMINDUnpack ${ROOT_LIBRARIES})
-
-  ADD_EXECUTABLE(AverageLY_August                   AverageLY_August.cpp)
-  TARGET_LINK_LIBRARIES(AverageLY_August            BabyMINDUnpack ${ROOT_LIBRARIES})
-
   ADD_EXECUTABLE(ProtonStop                         Max_LY_XZvsYZ.cpp)
   TARGET_LINK_LIBRARIES(ProtonStop                  BabyMINDUnpack ${ROOT_LIBRARIES})
+
+  ADD_EXECUTABLE(TimeFromTrigger                    Time_From_Trigger.cpp)
+  TARGET_LINK_LIBRARIES(TimeFromTrigger                   BabyMINDUnpack ${ROOT_LIBRARIES})
   
 endif (ROOT_FOUND)
