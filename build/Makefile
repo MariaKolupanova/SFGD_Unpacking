@@ -324,6 +324,19 @@ EnergyMuon/fast:
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/build
 .PHONY : EnergyMuon/fast
 
+#=============================================================================
+# Target rules for targets named BraggPeak
+
+# Build rule for target.
+BraggPeak: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BraggPeak
+.PHONY : BraggPeak
+
+# fast build rule for target.
+BraggPeak/fast:
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/BraggPeak.dir/build.make examples/CMakeFiles/BraggPeak.dir/build
+.PHONY : BraggPeak/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +347,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Amplitude_matching"
 	@echo "... BabyMINDUnpack"
+	@echo "... BraggPeak"
 	@echo "... Calibration"
 	@echo "... EnergyMuon"
 	@echo "... GTrigTagSearch"

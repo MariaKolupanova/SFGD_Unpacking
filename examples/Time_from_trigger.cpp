@@ -1,3 +1,12 @@
+// 0 - electrons / 1 - muons / 2 - protons - choose the type of particle to calibrate
+// for protons and electrons change fit function and time from trigger in the end of this file
+// in the and in data will be ..parameters.txt, it's result of the fit, to see distribution run ./EnegryMoun
+// my parameters for 1September_18 : 
+//muons 2.4 57 0.8 4.2 0.23
+//electrons 2.8 63.5 4 19.2 15.16
+//protons  4 70 3 19.265 10.24
+
+
 #include <stdio.h>
 #include <string.h>
 #include <fstream>
@@ -55,8 +64,6 @@ struct vectorsTree
     int FEBs[19] = {0,1,2,3,4,8,9,10,11,12,16,17,18,19,20,24,25,26,27};
     int NumberOfEB = 30;
     string sFileName, line;
-    // 0 - electrons / 1 - muons / 2 - protons - choose the type of particle to calibrate
-    // for protons and electrons change fit function and time from trigger in the end of this file
     int trigger = 1;
     ifstream fList("febs_files_list.list"); 
     vector<string> vFileNames;

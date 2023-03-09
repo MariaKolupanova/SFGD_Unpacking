@@ -43,7 +43,9 @@ if    (ROOT_FOUND)
   TARGET_LINK_LIBRARIES(TimeFromTrigger             BabyMINDUnpack ${ROOT_LIBRARIES})
 
   ADD_EXECUTABLE(EnergyMuon                         Energy_Straight_Muon_Track.cpp)
-  TARGET_LINK_LIBRARIES(EnergyMuon                 BabyMINDUnpack ${ROOT_LIBRARIES})
+  TARGET_LINK_LIBRARIES(EnergyMuon                  BabyMINDUnpack ${ROOT_LIBRARIES})
 
+  ADD_EXECUTABLE(BraggPeak                          Bragg_Peak_For_Protons.cpp)
+  TARGET_LINK_LIBRARIES(BraggPeak                   BabyMINDUnpack ${ROOT_LIBRARIES})
   
 endif (ROOT_FOUND)

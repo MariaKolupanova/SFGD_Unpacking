@@ -326,6 +326,20 @@ EnergyMuon/fast:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/build
 .PHONY : EnergyMuon/fast
 
+# Convenience name for target.
+examples/CMakeFiles/BraggPeak.dir/rule:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/BraggPeak.dir/rule
+.PHONY : examples/CMakeFiles/BraggPeak.dir/rule
+
+# Convenience name for target.
+BraggPeak: examples/CMakeFiles/BraggPeak.dir/rule
+.PHONY : BraggPeak
+
+# fast build rule for target.
+BraggPeak/fast:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/BraggPeak.dir/build.make examples/CMakeFiles/BraggPeak.dir/build
+.PHONY : BraggPeak/fast
+
 BabyMIND_ToT_Amplitude_matching.o: BabyMIND_ToT_Amplitude_matching.cpp.o
 .PHONY : BabyMIND_ToT_Amplitude_matching.o
 
@@ -349,6 +363,30 @@ BabyMIND_ToT_Amplitude_matching.s: BabyMIND_ToT_Amplitude_matching.cpp.s
 BabyMIND_ToT_Amplitude_matching.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/Amplitude_matching.dir/build.make examples/CMakeFiles/Amplitude_matching.dir/BabyMIND_ToT_Amplitude_matching.cpp.s
 .PHONY : BabyMIND_ToT_Amplitude_matching.cpp.s
+
+Bragg_Peak_For_Protons.o: Bragg_Peak_For_Protons.cpp.o
+.PHONY : Bragg_Peak_For_Protons.o
+
+# target to build an object file
+Bragg_Peak_For_Protons.cpp.o:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/BraggPeak.dir/build.make examples/CMakeFiles/BraggPeak.dir/Bragg_Peak_For_Protons.cpp.o
+.PHONY : Bragg_Peak_For_Protons.cpp.o
+
+Bragg_Peak_For_Protons.i: Bragg_Peak_For_Protons.cpp.i
+.PHONY : Bragg_Peak_For_Protons.i
+
+# target to preprocess a source file
+Bragg_Peak_For_Protons.cpp.i:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/BraggPeak.dir/build.make examples/CMakeFiles/BraggPeak.dir/Bragg_Peak_For_Protons.cpp.i
+.PHONY : Bragg_Peak_For_Protons.cpp.i
+
+Bragg_Peak_For_Protons.s: Bragg_Peak_For_Protons.cpp.s
+.PHONY : Bragg_Peak_For_Protons.s
+
+# target to generate assembly for a file
+Bragg_Peak_For_Protons.cpp.s:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/BraggPeak.dir/build.make examples/CMakeFiles/BraggPeak.dir/Bragg_Peak_For_Protons.cpp.s
+.PHONY : Bragg_Peak_For_Protons.cpp.s
 
 Energy_Straight_Muon_Track.o: Energy_Straight_Muon_Track.cpp.o
 .PHONY : Energy_Straight_Muon_Track.o
@@ -695,6 +733,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Amplitude_matching"
+	@echo "... BraggPeak"
 	@echo "... Calibration"
 	@echo "... EnergyMuon"
 	@echo "... GTrigTagSearch"
@@ -712,6 +751,9 @@ help:
 	@echo "... BabyMIND_ToT_Amplitude_matching.o"
 	@echo "... BabyMIND_ToT_Amplitude_matching.i"
 	@echo "... BabyMIND_ToT_Amplitude_matching.s"
+	@echo "... Bragg_Peak_For_Protons.o"
+	@echo "... Bragg_Peak_For_Protons.i"
+	@echo "... Bragg_Peak_For_Protons.s"
 	@echo "... Energy_Straight_Muon_Track.o"
 	@echo "... Energy_Straight_Muon_Track.i"
 	@echo "... Energy_Straight_Muon_Track.s"
