@@ -59,14 +59,18 @@ struct vectorsTree
     // for protons and electrons change fit function and time from trigger in the end of this file
     int trigger = 1;
     ifstream fList("febs_files_list.list"); 
-    fList >> sFileName;
+    vector<string> vFileNames;
+    while (!fList.eof()) {
+        fList >> sFileName;
+        vFileNames.push_back(sFileName);
+    }
     fList.close();
-    string rootFileInput=GetLocation(sFileName.c_str()) + "_all_reconstructed.root";;
-    string txtFileInput=GetLocation (sFileName.c_str()) + "_graph.txt";
-    string txtFileOutput=GetLocation (sFileName.c_str())+ "_parameters.txt";
+    string rootFileInput=GetLocation(vFileNames[0].c_str()) + "_all_reconstructed.root";;
+    string txtFileInput=GetLocation (vFileNames[0].c_str()) + "_graph.txt";
+    string txtFileOutput=GetLocation (vFileNames[0].c_str())+ "_parameters.txt";
     ifstream in(txtFileInput);
     ofstream out(txtFileOutput);
-    TFile wfile((GetLocation (sFileName.c_str())+"_time_from_trigger.root").c_str(), "recreate");
+    TFile wfile((GetLocation (vFileNames[0].c_str())+"_time_from_trigger.root").c_str(), "recreate");
     TH1F* h[40];
     cout << rootFileInput<<endl;
     TFile *FileInput = new TFile(rootFileInput.c_str());
@@ -131,40 +135,34 @@ struct vectorsTree
             nentries[ih] = FEBtree[ih]->GetEntries();
             FEBtree[ih]->GetEntry(0);
         }
-  }
+    }
     int minEn = (int)nentries[0];
     for(int i = 0; i < NumberOfEB; i++){
-        if(nentries[i] < minEn && nentries[i]>0){
-            minEn = (int)nentries[i];
-        }
+        if(nentries[i] < minEn && nentries[i]>0) minEn = (int)nentries[i];
     }
     cout << "Number of spills " << minEn << endl;
     int MapCon[28][2][96];
     for (int iFEB = 0; iFEB<19; iFEB++) {
        if (FEBs[iFEB] != febTrigger){
-        sFEBnum.str("");
-        sFEBnum << FEBs[iFEB];
-        sFEB = "../mapping/" + sFEBnum.str() + ".txt";
-        ifstream fmap(sFEB.c_str());
-        int temp=0;
-        while (!fmap.eof()) {
-            fmap >> temp >> MapCon[FEBs[iFEB]][0][temp] >>MapCon[FEBs[iFEB]][1][temp];
-            temp++;
-        }
-        fmap.close();
+            sFEBnum.str("");
+            sFEBnum << FEBs[iFEB];
+            sFEB = "../mapping/" + sFEBnum.str() + ".txt";
+            ifstream fmap(sFEB.c_str());
+            int temp=0;
+            while (!fmap.eof()) {
+                fmap >> temp >> MapCon[FEBs[iFEB]][0][temp] >>MapCon[FEBs[iFEB]][1][temp];
+                temp++;
+            }
+            fmap.close();
        }
     }
     bool SpillMised = false;
     for (Int_t subSpill = 0; subSpill<minEn; subSpill++) {
-  //for (Int_t subSpill = 0; subSpill<155; subSpill++) {
         Int_t SpillNumber = subSpill;
-        
         cout << "Getting Spill Number " << SpillNumber + 1 << endl;
         for (int ik = 0; ik < 19; ik++){
             FEBtree[FEBs[ik]]->GetEntry(SpillNumber);
-            if (FEB[FEBs[ik]].SpillTag->back() != SpillNumber + 1){
-                break;
-            }
+            if (FEB[FEBs[ik]].SpillTag->back() != SpillNumber + 1) break;
             if (FEB[FEBs[ik]].SpillTag->size() < 2  ){
                 cout << "NULL"<<endl;
                 SpillMised = true;
@@ -188,13 +186,12 @@ struct vectorsTree
             
                             for (int check = GTindex[0]; check <  GTindex[1]; check++){
                                 if ( (FEB[febTrigger].hitTimefromSpill->at(TOFtrigger) - FEB[FEBs[i]].hitTimefromSpill->at(check)) > 40 &&
-                                    (FEB[febTrigger].hitTimefromSpill->at(TOFtrigger) - FEB[FEBs[i]].hitTimefromSpill->at(check)) < 120){
-                                    if (FEB[FEBs[i]].hitCharge_pe->at(check) > 0  && FEB[FEBs[i]].hitCharge_pe->at(check) < 10000) {
+                                    (FEB[febTrigger].hitTimefromSpill->at(TOFtrigger) - FEB[FEBs[i]].hitTimefromSpill->at(check)) < 120 &&
+                                    (FEB[FEBs[i]].hitCharge_pe->at(check) > 0  && FEB[FEBs[i]].hitCharge_pe->at(check) < 10000)){
                                         Double_t par_x = (int)FEB[FEBs[i]].hitLeadTime->at(check) - FEB[febTrigger].hitLeadTime->at(TOFtrigger);
                                         Double_t par_y = (Double_t)FEB[FEBs[i]].hitCharge_pe->at(check);
                                         Time_P_e.push_back({par_x,par_y});
                                         // cout <<par_x<<" "<<par_y<<endl;
-                                   }
                                 }
                             }
                         }
@@ -263,9 +260,8 @@ struct vectorsTree
     Double_t par[5];
     f->GetParameters(&par[0]);
     for(int m = 0;m<5;m++) out <<par[m]<<" ";
-    //go to .._Time_from_trigger.root c1 find parameters, then write down them in .._parameters.txt 
-    // for example: 2.4 57 0.8 4.2 0.23 for muons
     out<<endl;
+
     delete g;
     return 0;
 }

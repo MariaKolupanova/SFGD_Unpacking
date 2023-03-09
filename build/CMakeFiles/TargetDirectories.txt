@@ -16,7 +16,7 @@
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/StoppingProton.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/Calibration.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/Amplitude_matching.dir
-/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/ProtonStop.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/TimeFromTrigger.dir
+/Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/EnergyMuon.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/edit_cache.dir
 /Users/maria/SFGD_Unpacking/build/examples/CMakeFiles/rebuild_cache.dir

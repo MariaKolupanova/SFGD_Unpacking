@@ -66,6 +66,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "examples/CMakeFiles/StoppingProton.dir/DependInfo.cmake"
   "examples/CMakeFiles/Calibration.dir/DependInfo.cmake"
   "examples/CMakeFiles/Amplitude_matching.dir/DependInfo.cmake"
-  "examples/CMakeFiles/ProtonStop.dir/DependInfo.cmake"
   "examples/CMakeFiles/TimeFromTrigger.dir/DependInfo.cmake"
+  "examples/CMakeFiles/EnergyMuon.dir/DependInfo.cmake"
   )

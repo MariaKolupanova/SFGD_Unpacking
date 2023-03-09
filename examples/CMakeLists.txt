@@ -39,10 +39,11 @@ if    (ROOT_FOUND)
   ADD_EXECUTABLE(Amplitude_matching                 BabyMIND_ToT_Amplitude_matching.cpp)
   TARGET_LINK_LIBRARIES(Amplitude_matching          BabyMINDUnpack ${ROOT_LIBRARIES})
 
-  ADD_EXECUTABLE(ProtonStop                         Max_LY_XZvsYZ.cpp)
-  TARGET_LINK_LIBRARIES(ProtonStop                  BabyMINDUnpack ${ROOT_LIBRARIES})
-
   ADD_EXECUTABLE(TimeFromTrigger                    Time_From_Trigger.cpp)
-  TARGET_LINK_LIBRARIES(TimeFromTrigger                   BabyMINDUnpack ${ROOT_LIBRARIES})
+  TARGET_LINK_LIBRARIES(TimeFromTrigger             BabyMINDUnpack ${ROOT_LIBRARIES})
+
+  ADD_EXECUTABLE(EnergyMuon                         Energy_Straight_Muon_Track.cpp)
+  TARGET_LINK_LIBRARIES(EnergyMuon                 BabyMINDUnpack ${ROOT_LIBRARIES})
+
   
 endif (ROOT_FOUND)

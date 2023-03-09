@@ -299,19 +299,6 @@ Amplitude_matching/fast:
 .PHONY : Amplitude_matching/fast
 
 #=============================================================================
-# Target rules for targets named ProtonStop
-
-# Build rule for target.
-ProtonStop: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ProtonStop
-.PHONY : ProtonStop
-
-# fast build rule for target.
-ProtonStop/fast:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/build
-.PHONY : ProtonStop/fast
-
-#=============================================================================
 # Target rules for targets named TimeFromTrigger
 
 # Build rule for target.
@@ -324,6 +311,19 @@ TimeFromTrigger/fast:
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/build
 .PHONY : TimeFromTrigger/fast
 
+#=============================================================================
+# Target rules for targets named EnergyMuon
+
+# Build rule for target.
+EnergyMuon: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 EnergyMuon
+.PHONY : EnergyMuon
+
+# fast build rule for target.
+EnergyMuon/fast:
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/build
+.PHONY : EnergyMuon/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -335,12 +335,12 @@ help:
 	@echo "... Amplitude_matching"
 	@echo "... BabyMINDUnpack"
 	@echo "... Calibration"
+	@echo "... EnergyMuon"
 	@echo "... GTrigTagSearch"
 	@echo "... HG_reconstructed"
 	@echo "... HG_vs_LG_calib"
 	@echo "... HG_vs_ToT_calib"
 	@echo "... LG_vs_ToT_calib"
-	@echo "... ProtonStop"
 	@echo "... StoppingProton"
 	@echo "... TDMunpack"
 	@echo "... TimeFromTrigger"

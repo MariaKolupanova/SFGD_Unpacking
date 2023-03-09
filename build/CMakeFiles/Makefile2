@@ -94,8 +94,8 @@ examples/all: examples/CMakeFiles/HG_reconstructed.dir/all
 examples/all: examples/CMakeFiles/StoppingProton.dir/all
 examples/all: examples/CMakeFiles/Calibration.dir/all
 examples/all: examples/CMakeFiles/Amplitude_matching.dir/all
-examples/all: examples/CMakeFiles/ProtonStop.dir/all
 examples/all: examples/CMakeFiles/TimeFromTrigger.dir/all
+examples/all: examples/CMakeFiles/EnergyMuon.dir/all
 .PHONY : examples/all
 
 # Recursive "preinstall" directory target.
@@ -116,8 +116,8 @@ examples/clean: examples/CMakeFiles/HG_reconstructed.dir/clean
 examples/clean: examples/CMakeFiles/StoppingProton.dir/clean
 examples/clean: examples/CMakeFiles/Calibration.dir/clean
 examples/clean: examples/CMakeFiles/Amplitude_matching.dir/clean
-examples/clean: examples/CMakeFiles/ProtonStop.dir/clean
 examples/clean: examples/CMakeFiles/TimeFromTrigger.dir/clean
+examples/clean: examples/CMakeFiles/EnergyMuon.dir/clean
 .PHONY : examples/clean
 
 #=============================================================================
@@ -298,7 +298,7 @@ examples/CMakeFiles/TDMunpack.dir/clean:
 examples/CMakeFiles/GTrigTagSearch.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/GTrigTagSearch.dir/build.make examples/CMakeFiles/GTrigTagSearch.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/GTrigTagSearch.dir/build.make examples/CMakeFiles/GTrigTagSearch.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=12,13 "Built target GTrigTagSearch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=14,15 "Built target GTrigTagSearch"
 .PHONY : examples/CMakeFiles/GTrigTagSearch.dir/all
 
 # Build rule for subdir invocation for target.
@@ -324,7 +324,7 @@ examples/CMakeFiles/GTrigTagSearch.dir/clean:
 examples/CMakeFiles/HG_vs_LG_calib.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_vs_LG_calib.dir/build.make examples/CMakeFiles/HG_vs_LG_calib.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_vs_LG_calib.dir/build.make examples/CMakeFiles/HG_vs_LG_calib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=16,17 "Built target HG_vs_LG_calib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=18,19 "Built target HG_vs_LG_calib"
 .PHONY : examples/CMakeFiles/HG_vs_LG_calib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -350,7 +350,7 @@ examples/CMakeFiles/HG_vs_LG_calib.dir/clean:
 examples/CMakeFiles/HG_vs_ToT_calib.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_vs_ToT_calib.dir/build.make examples/CMakeFiles/HG_vs_ToT_calib.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_vs_ToT_calib.dir/build.make examples/CMakeFiles/HG_vs_ToT_calib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=18,19 "Built target HG_vs_ToT_calib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=20,21 "Built target HG_vs_ToT_calib"
 .PHONY : examples/CMakeFiles/HG_vs_ToT_calib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -376,7 +376,7 @@ examples/CMakeFiles/HG_vs_ToT_calib.dir/clean:
 examples/CMakeFiles/LG_vs_ToT_calib.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/LG_vs_ToT_calib.dir/build.make examples/CMakeFiles/LG_vs_ToT_calib.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/LG_vs_ToT_calib.dir/build.make examples/CMakeFiles/LG_vs_ToT_calib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=20,21 "Built target LG_vs_ToT_calib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=22,23 "Built target LG_vs_ToT_calib"
 .PHONY : examples/CMakeFiles/LG_vs_ToT_calib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -402,7 +402,7 @@ examples/CMakeFiles/LG_vs_ToT_calib.dir/clean:
 examples/CMakeFiles/HG_reconstructed.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_reconstructed.dir/build.make examples/CMakeFiles/HG_reconstructed.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/HG_reconstructed.dir/build.make examples/CMakeFiles/HG_reconstructed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=14,15 "Built target HG_reconstructed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=16,17 "Built target HG_reconstructed"
 .PHONY : examples/CMakeFiles/HG_reconstructed.dir/all
 
 # Build rule for subdir invocation for target.
@@ -500,32 +500,6 @@ examples/CMakeFiles/Amplitude_matching.dir/clean:
 .PHONY : examples/CMakeFiles/Amplitude_matching.dir/clean
 
 #=============================================================================
-# Target rules for target examples/CMakeFiles/ProtonStop.dir
-
-# All Build rule for target.
-examples/CMakeFiles/ProtonStop.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/depend
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=22,23 "Built target ProtonStop"
-.PHONY : examples/CMakeFiles/ProtonStop.dir/all
-
-# Build rule for subdir invocation for target.
-examples/CMakeFiles/ProtonStop.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maria/SFGD_Unpacking/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/ProtonStop.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maria/SFGD_Unpacking/build/CMakeFiles 0
-.PHONY : examples/CMakeFiles/ProtonStop.dir/rule
-
-# Convenience name for target.
-ProtonStop: examples/CMakeFiles/ProtonStop.dir/rule
-.PHONY : ProtonStop
-
-# clean rule for target.
-examples/CMakeFiles/ProtonStop.dir/clean:
-	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/clean
-.PHONY : examples/CMakeFiles/ProtonStop.dir/clean
-
-#=============================================================================
 # Target rules for target examples/CMakeFiles/TimeFromTrigger.dir
 
 # All Build rule for target.
@@ -550,6 +524,32 @@ TimeFromTrigger: examples/CMakeFiles/TimeFromTrigger.dir/rule
 examples/CMakeFiles/TimeFromTrigger.dir/clean:
 	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/clean
 .PHONY : examples/CMakeFiles/TimeFromTrigger.dir/clean
+
+#=============================================================================
+# Target rules for target examples/CMakeFiles/EnergyMuon.dir
+
+# All Build rule for target.
+examples/CMakeFiles/EnergyMuon.dir/all: src/CMakeFiles/BabyMINDUnpack.dir/all
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/depend
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/maria/SFGD_Unpacking/build/CMakeFiles --progress-num=12,13 "Built target EnergyMuon"
+.PHONY : examples/CMakeFiles/EnergyMuon.dir/all
+
+# Build rule for subdir invocation for target.
+examples/CMakeFiles/EnergyMuon.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maria/SFGD_Unpacking/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/EnergyMuon.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maria/SFGD_Unpacking/build/CMakeFiles 0
+.PHONY : examples/CMakeFiles/EnergyMuon.dir/rule
+
+# Convenience name for target.
+EnergyMuon: examples/CMakeFiles/EnergyMuon.dir/rule
+.PHONY : EnergyMuon
+
+# clean rule for target.
+examples/CMakeFiles/EnergyMuon.dir/clean:
+	$(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/clean
+.PHONY : examples/CMakeFiles/EnergyMuon.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

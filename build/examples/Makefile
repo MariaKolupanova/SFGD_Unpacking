@@ -299,20 +299,6 @@ Amplitude_matching/fast:
 .PHONY : Amplitude_matching/fast
 
 # Convenience name for target.
-examples/CMakeFiles/ProtonStop.dir/rule:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/ProtonStop.dir/rule
-.PHONY : examples/CMakeFiles/ProtonStop.dir/rule
-
-# Convenience name for target.
-ProtonStop: examples/CMakeFiles/ProtonStop.dir/rule
-.PHONY : ProtonStop
-
-# fast build rule for target.
-ProtonStop/fast:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/build
-.PHONY : ProtonStop/fast
-
-# Convenience name for target.
 examples/CMakeFiles/TimeFromTrigger.dir/rule:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/TimeFromTrigger.dir/rule
 .PHONY : examples/CMakeFiles/TimeFromTrigger.dir/rule
@@ -325,6 +311,20 @@ TimeFromTrigger: examples/CMakeFiles/TimeFromTrigger.dir/rule
 TimeFromTrigger/fast:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/TimeFromTrigger.dir/build.make examples/CMakeFiles/TimeFromTrigger.dir/build
 .PHONY : TimeFromTrigger/fast
+
+# Convenience name for target.
+examples/CMakeFiles/EnergyMuon.dir/rule:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/CMakeFiles/EnergyMuon.dir/rule
+.PHONY : examples/CMakeFiles/EnergyMuon.dir/rule
+
+# Convenience name for target.
+EnergyMuon: examples/CMakeFiles/EnergyMuon.dir/rule
+.PHONY : EnergyMuon
+
+# fast build rule for target.
+EnergyMuon/fast:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/build
+.PHONY : EnergyMuon/fast
 
 BabyMIND_ToT_Amplitude_matching.o: BabyMIND_ToT_Amplitude_matching.cpp.o
 .PHONY : BabyMIND_ToT_Amplitude_matching.o
@@ -349,6 +349,30 @@ BabyMIND_ToT_Amplitude_matching.s: BabyMIND_ToT_Amplitude_matching.cpp.s
 BabyMIND_ToT_Amplitude_matching.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/Amplitude_matching.dir/build.make examples/CMakeFiles/Amplitude_matching.dir/BabyMIND_ToT_Amplitude_matching.cpp.s
 .PHONY : BabyMIND_ToT_Amplitude_matching.cpp.s
+
+Energy_Straight_Muon_Track.o: Energy_Straight_Muon_Track.cpp.o
+.PHONY : Energy_Straight_Muon_Track.o
+
+# target to build an object file
+Energy_Straight_Muon_Track.cpp.o:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/Energy_Straight_Muon_Track.cpp.o
+.PHONY : Energy_Straight_Muon_Track.cpp.o
+
+Energy_Straight_Muon_Track.i: Energy_Straight_Muon_Track.cpp.i
+.PHONY : Energy_Straight_Muon_Track.i
+
+# target to preprocess a source file
+Energy_Straight_Muon_Track.cpp.i:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/Energy_Straight_Muon_Track.cpp.i
+.PHONY : Energy_Straight_Muon_Track.cpp.i
+
+Energy_Straight_Muon_Track.s: Energy_Straight_Muon_Track.cpp.s
+.PHONY : Energy_Straight_Muon_Track.s
+
+# target to generate assembly for a file
+Energy_Straight_Muon_Track.cpp.s:
+	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/EnergyMuon.dir/build.make examples/CMakeFiles/EnergyMuon.dir/Energy_Straight_Muon_Track.cpp.s
+.PHONY : Energy_Straight_Muon_Track.cpp.s
 
 GTrigTagSearch.o: GTrigTagSearch.cpp.o
 .PHONY : GTrigTagSearch.o
@@ -469,30 +493,6 @@ LG_vs_ToT_calib.s: LG_vs_ToT_calib.cpp.s
 LG_vs_ToT_calib.cpp.s:
 	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/LG_vs_ToT_calib.dir/build.make examples/CMakeFiles/LG_vs_ToT_calib.dir/LG_vs_ToT_calib.cpp.s
 .PHONY : LG_vs_ToT_calib.cpp.s
-
-Max_LY_XZvsYZ.o: Max_LY_XZvsYZ.cpp.o
-.PHONY : Max_LY_XZvsYZ.o
-
-# target to build an object file
-Max_LY_XZvsYZ.cpp.o:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/Max_LY_XZvsYZ.cpp.o
-.PHONY : Max_LY_XZvsYZ.cpp.o
-
-Max_LY_XZvsYZ.i: Max_LY_XZvsYZ.cpp.i
-.PHONY : Max_LY_XZvsYZ.i
-
-# target to preprocess a source file
-Max_LY_XZvsYZ.cpp.i:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/Max_LY_XZvsYZ.cpp.i
-.PHONY : Max_LY_XZvsYZ.cpp.i
-
-Max_LY_XZvsYZ.s: Max_LY_XZvsYZ.cpp.s
-.PHONY : Max_LY_XZvsYZ.s
-
-# target to generate assembly for a file
-Max_LY_XZvsYZ.cpp.s:
-	cd /Users/maria/SFGD_Unpacking/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/ProtonStop.dir/build.make examples/CMakeFiles/ProtonStop.dir/Max_LY_XZvsYZ.cpp.s
-.PHONY : Max_LY_XZvsYZ.cpp.s
 
 Proton_stop.o: Proton_stop.cpp.o
 .PHONY : Proton_stop.o
@@ -696,12 +696,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Amplitude_matching"
 	@echo "... Calibration"
+	@echo "... EnergyMuon"
 	@echo "... GTrigTagSearch"
 	@echo "... HG_reconstructed"
 	@echo "... HG_vs_LG_calib"
 	@echo "... HG_vs_ToT_calib"
 	@echo "... LG_vs_ToT_calib"
-	@echo "... ProtonStop"
 	@echo "... StoppingProton"
 	@echo "... TDMunpack"
 	@echo "... TimeFromTrigger"
@@ -712,6 +712,9 @@ help:
 	@echo "... BabyMIND_ToT_Amplitude_matching.o"
 	@echo "... BabyMIND_ToT_Amplitude_matching.i"
 	@echo "... BabyMIND_ToT_Amplitude_matching.s"
+	@echo "... Energy_Straight_Muon_Track.o"
+	@echo "... Energy_Straight_Muon_Track.i"
+	@echo "... Energy_Straight_Muon_Track.s"
 	@echo "... GTrigTagSearch.o"
 	@echo "... GTrigTagSearch.i"
 	@echo "... GTrigTagSearch.s"
@@ -727,9 +730,6 @@ help:
 	@echo "... LG_vs_ToT_calib.o"
 	@echo "... LG_vs_ToT_calib.i"
 	@echo "... LG_vs_ToT_calib.s"
-	@echo "... Max_LY_XZvsYZ.o"
-	@echo "... Max_LY_XZvsYZ.i"
-	@echo "... Max_LY_XZvsYZ.s"
 	@echo "... Proton_stop.o"
 	@echo "... Proton_stop.i"
 	@echo "... Proton_stop.s"
